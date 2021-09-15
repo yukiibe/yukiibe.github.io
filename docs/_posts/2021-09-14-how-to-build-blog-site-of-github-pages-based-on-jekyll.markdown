@@ -7,7 +7,7 @@ categories: blog github jekyll
 こんにちは、若手エンジニアのしまうまです。
 
 この記事では、<br>
-「__JekyllをベースにしてGithub Pages上にブログサイトを構築する方法__」を紹介します。
+「__JekyllでGithub Pages上にブログサイトを構築する方法__」を紹介します。
 
 ![](/assets/images/pexels-negative-space-92904.png)
 
@@ -18,51 +18,62 @@ categories: blog github jekyll
 3. rbenv / ruby / gem / bundler
 4. Jekyll
 
-ちなみに、WSL2の環境でなくても構築は可能です。その場合、Git bashなど他のツールを利用する必要があります。
-[Github][github-docs]の公式が用意している[構築手順][jekyll-by-git-bash-github]はGit bashを前提にして書かれています。
-
-※なお、今回の記事はGitの知識やGithubの利用経験があることを前提に書いています。
+ちなみにWSL2の環境でなくても構築は可能です。<br>
+その場合、Git bashなど他のツールを利用する必要があります。<br>
+Githubの公式ドキュメントが用意している[__こちらの構築手順__][jekyll-by-git-bash-github]はGit bashを前提にして書かれています。
 
 ---
 
 ### __目次__
-1. [Github Pagesとは](#about-github-pages)
-2. [Jekyll（ジキル）とは](#about-jekyll)
-3. [Github上でリポジトリを作成する](#create-repository-on-github)
-4. [Jekyllをインストールする](#install-jekyll)
-5. [Jekyllを使ってサイトを構築する](#build-site-by-jekyll)
+1. [__Github Pagesとは__](#about-github-pages)
+
+2. [__Jekyll（ジキル）とは__](#about-jekyll)
+
+3. [__Github上でリポジトリを作成する__](#create-repository-on-github)
+
+4. [__Jekyllをインストールする__](#install-jekyll)
+
+5. [__Jekyllを使ってサイトを構築する__](#build-site-by-jekyll)
 
 ---
 
 <a id="about-github-pages"></a>
 ### 1. __Github Pagesとは__
 
+---
+
 <a id="about-jekyll"></a>
 ### 2. __Jekyll（ジキル）とは__
 
-→静的サイトジェネレータの一種
-→Jekyllを使用することでブログサイトっぽいテーマを自動で作ってくれる
+Jekyll（ジキル）は、静的サイトジェネレーターと呼ばれるサイト構築ツールです。<br>
+主にブログサイトを構築・運用するのに適しています。
+
+普通ブログサイトを公開しようと思ったら、HTMLやCSSファイルなどを自前で用意しなければなりません。
+しかし、Jekyllツールを使用することで、ブログサイトを運用するために必要な機能やテーマを簡単に作成できます。
+
+---
 
 <a id="create-repository-on-github"></a>
 ### 3. __Github上でリポジトリを作成する__
 
-まずは、ブログサイトを公開できるようにGithub（Web）上でリポジトリを作成します。<br>
+まずは、ブログサイトを公開できるようにGithub（Web）上にリポジトリを作成します。<br>
 作成したリポジトリに、この後Jekyllで生成するサイト用のソースをアップすることでサイトが公開できるようになります。
 
-作成方法については、以下のGithub公式ドキュメントをご参照ください。<br>
-→[サイト用にリポジトリを作成する][create-github-repository-for-site]
+作成方法については、こちらの[__Githubの公式ドキュメント__][create-github-repository-for-site]をご参照ください。<br>
 
 ポイントとしては
 
-* リポジトリ名は`<user>.github.io`
+* リポジトリ名は`<user>.github.io` （組織で運用する場合は`<organization>.github.io`）
 * リポジトリの可視性は`public`
 
 です。
 
+---
+
 <a id="install-jekyll"></a>
 ### 4. __Jekyllをインストールする__
 
-[Jekyll][jekyll-docs]の公式に[インストール方法][jekyll-install]が記載されていますが、
+こちらの[__Jekyllの公式ドキュメント__][jekyll-install]には事前にrubyをインストールする方法が記載されていますが、
 `apt`を利用したインストール方法はrubyのバージョンや権限周りでうまくいかないようなので、
 今回は`rbenv`を利用してrubyをインストールします。
 
@@ -73,6 +84,7 @@ categories: blog github jekyll
 まず、`apt`によってすでにrubyがインストールされている場合はアンインストールを行います
 
 ```
+cd ~
 sudo apt purge ruby
 ※私の環境ではruby2.5でした。
 ```
@@ -137,13 +149,100 @@ Jekyllのインストール確認
 jekyll -v
 ```
 
+---
+
 <a id="build-site-by-jekyll"></a>
 ### 5. __Jekyllを使ってサイトを構築する__
 
+Githubリポジトリの作成、Jekyllのインストールが完了したら、<br>
+次はローカルリポジトリを作成して、そこにJekyllでサイトを構築し、Github上にアップロードします。
+基本的には、Githubが用意している[__こちらの構築手順__][build-github-pages-site-with-jekyll]に沿って解説します。
+
+#### __ローカルリポジトリの作成__
+
+※`<user>`の部分は書き換えてください。
+```
+mkdir <user>.github.io
+cd ~/<user>.github.io
+git init
+```
+
+リポジトリの下にディレクトリを挟みたい場合は
+```
+mkdir <user>.github.io/docs
+cd ~/<user>.github.io/docs
+```
+
+#### __Jekyllでサイトを構築__
+
+サイトを作成したいディレクトリに移動して下記を実行
+```
+jekyll new --skip-bundle .
+```
+※bundleは後でインストールします
+
+実行すると、以下のようなファイル群が自動で生成されます
+```
+ubuntu@Y-IBE:~/yukiibe.github.io/docs$ ls -al
+total 36
+drwxr-xr-x 3 ubuntu ubuntu 4096 Sep 13 22:43 .
+drwxr-xr-x 4 ubuntu ubuntu 4096 Sep 13 17:52 ..
+-rw-r--r-- 1 ubuntu ubuntu   56 Sep 13 22:43 .gitignore
+-rw-r--r-- 1 ubuntu ubuntu  419 Sep 13 22:43 404.html
+-rw-r--r-- 1 ubuntu ubuntu 1125 Sep 13 22:43 Gemfile
+-rw-r--r-- 1 ubuntu ubuntu 2080 Sep 13 22:43 _config.yml
+drwxr-xr-x 2 ubuntu ubuntu 4096 Sep 13 22:43 _posts
+-rw-r--r-- 1 ubuntu ubuntu  539 Sep 13 22:43 about.markdown
+-rw-r--r-- 1 ubuntu ubuntu  175 Sep 13 22:43 index.markdown
+```
+
+Gemファイルの編集
+```
+vi Gemfile
+```
+下記をコメントアウト
+```
+#gem "jekyll", "~> 4.2.0"
+```
+「# gem "github-pages"」で始まる行を、[__依存バージョン一覧__][github-pages-dependency-versions]の、<br>
+"github-pages"のバージョンを確認して、以下の GITHUB-PAGES-VERSION を書き換えて保存。
+```
+gem "github-pages", "~> GITHUB-PAGES-VERSION", group: :jekyll_plugins
+↓
+gem "github-pages", "~> 219", group: :jekyll_plugins
+```
+
+bundleのインストール
+```
+bundle install
+```
+
+#### __Github上にアップロード__
+
+コミットしてリモートリポジトリへプッシュ
+```
+git add .
+git commit -m 'Initial GitHub pages site with Jekyll'
+```
+```
+git remote add origin https://github.com/<user>/<user>.github.io.git
+git push -u origin master
+```
+
+#### __ブログサイトの動作確認__
+
+・URL
+・リポジトリの下にディレクトリを作成している場合（docs）
+・テーマについて
+・記事の作成について
 
 
-[github-docs]: https://docs.github.com/ja
+
+
+
 [jekyll-by-git-bash-github]: https://docs.github.com/ja/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll
 [create-github-repository-for-site]: https://docs.github.com/ja/pages/getting-started-with-github-pages/creating-a-github-pages-site#creating-a-repository-for-your-site
 [jekyll-install]: https://jekyllrb.com/docs/installation/windows/
 [jekyll-docs]: https://jekyllrb.com/docs/home
+[build-github-pages-site-with-jekyll]: https://docs.github.com/ja/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll#creating-your-site
+[github-pages-dependency-versions]: https://pages.github.com/versions/
