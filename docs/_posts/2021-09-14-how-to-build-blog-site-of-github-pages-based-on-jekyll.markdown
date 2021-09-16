@@ -15,7 +15,7 @@ categories: blog github jekyll
 今回使用した環境・技術は以下の通りです。
 1. Windows Subsystem for Linux 2 (WSL2) / Ubuntu
 2. Github
-3. rbenv / ruby / gem / bundler
+3. rbenv / ruby / gem / bundle
 4. Jekyll
 
 ちなみにWSL2の環境でなくても構築は可能です。<br>
@@ -35,10 +35,16 @@ Githubの公式ドキュメントが用意している[__こちらの構築手�
 
 5. [__Jekyllを使ってサイトを構築する__](#build-site-by-jekyll)
 
+6. [__最後に__](#last-words)
+
 ---
 
 <a id="about-github-pages"></a>
 ### 1. __Github Pagesとは__
+
+Github Pagesは、Githubが提供している静的サイトのホスティングサービスです。<br>
+Githubのアカウントがあれば、無料かつ簡単にサイトを立ち上げることができるので、<br>
+サーバーやドメインなどを用意するコストはかかりません。（任意で独自のドメインを設定することも可能です）
 
 ---
 
@@ -46,20 +52,21 @@ Githubの公式ドキュメントが用意している[__こちらの構築手�
 ### 2. __Jekyll（ジキル）とは__
 
 Jekyll（ジキル）は、静的サイトジェネレーターと呼ばれるサイト構築ツールです。<br>
-主にブログサイトを構築・運用するのに適しています。
+Jekyllは特にブログサイトを構築・運用するのに適しています。
 
 普通ブログサイトを公開しようと思ったら、HTMLやCSSファイルなどを自前で用意しなければなりません。
 しかし、Jekyllツールを使用することで、ブログサイトを運用するために必要な機能やテーマを簡単に作成できます。
+これによって、ユーザーはHTMLやCSSなどを気にすることなく、ブログ記事の作成に注力することができます。
 
 ---
 
 <a id="create-repository-on-github"></a>
 ### 3. __Github上でリポジトリを作成する__
 
-まずは、ブログサイトを公開できるようにGithub（Web）上にリポジトリを作成します。<br>
-作成したリポジトリに、この後Jekyllで生成するサイト用のソースをアップすることでサイトが公開できるようになります。
+まずは、ブログサイトを公開できるようにGithub（Web）上でリポジトリを作成します。<br>
+作成したリポジトリに、この後Jekyllで生成するサイト用のソースをアップすることでサイトを構築できるようになります。
 
-作成方法については、こちらの[__Githubの公式ドキュメント__][create-github-repository-for-site]をご参照ください。<br>
+リポジトリの作成方法については、こちらの[__Githubの公式ドキュメント__][create-github-repository-for-site]をご参照ください。<br>
 
 ポイントとしては
 
@@ -172,6 +179,14 @@ git init
 mkdir <user>.github.io/docs
 cd ~/<user>.github.io/docs
 ```
+※リポジトリの下にディレクトリを作成して、その下にJekyllを構築したい場合は、
+今回作成したGithubリポジトリのSettings → Pages の `source` で公開するソースの場所を調整する必要があります。
+
+![](/assets/screenshots/2021-09-16_101702.png)
+
+私の環境でも、`<user>.github.io/docs`の下にJekyllを構築しています。
+（リポジトリ直下にJekyllを構築しても特に問題はないと思います）
+設定方法については[__こちらの説明__][github-pages-built-source]をご参照ください。
 
 #### __Jekyllでサイトを構築__
 
@@ -231,18 +246,39 @@ git push -u origin master
 
 #### __ブログサイトの動作確認__
 
-・URL
-・リポジトリの下にディレクトリを作成している場合（docs）
-・テーマについて
-・記事の作成について
+ブログサイトTopのURLは下記になります。確認してみましょう。
+```
+https://<user>.github.io
+```
+下記のようなページが表示されればOKです。
+（反映直後は表示されない可能性があるので、その場合は少し時間を置いてから再アクセスします）
 
+![](/assets/screenshots/2021-09-16_103416.png)
 
+---
 
+<a id="last-words"></a>
+### 6. __最後に__
 
+#### __テーマやブログ記事について__
+
+Jekyllには他にも複数のテーマが用意されています。今回はデフォルトの`Minima`というテーマを使用しましたが、
+[__Githubがサポートしているテーマ__][github-supported-themes]の他、それ以外のテーマも工夫をすれば適用できるようです。
+[__詳しくはこちら__][about-jekyll-themes]をご参照ください。
+
+Jekyllの最大のメリットは、HTMLやCSSなど細かいことを気にせずに記事の作成に集中できることだと思っています。
+実際に、記事の作成は基本的にすべて`markdown`で記述しています。（この記事もmarkdownのみで再現しています）<br>
+そのあたりの記事の作成や運用については、また別の機会に解説できたらなと思います。
+
+今回の内容は以上となります。
+本記事が構築の手助けになれば幸いです。
 
 [jekyll-by-git-bash-github]: https://docs.github.com/ja/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll
 [create-github-repository-for-site]: https://docs.github.com/ja/pages/getting-started-with-github-pages/creating-a-github-pages-site#creating-a-repository-for-your-site
 [jekyll-install]: https://jekyllrb.com/docs/installation/windows/
 [jekyll-docs]: https://jekyllrb.com/docs/home
 [build-github-pages-site-with-jekyll]: https://docs.github.com/ja/pages/setting-up-a-github-pages-site-with-jekyll/creating-a-github-pages-site-with-jekyll#creating-your-site
+[github-pages-built-source]: https://docs.github.com/ja/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site#choosing-a-publishing-source
 [github-pages-dependency-versions]: https://pages.github.com/versions/
+[github-supported-themes]: https://pages.github.com/themes/
+[about-jekyll-themes]: https://jekyllrb.com/docs/themes/
