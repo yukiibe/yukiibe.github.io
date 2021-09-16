@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Github Pages + Jekyll でブログサイトを作る方法"
-date:   2021-09-14 23:57:00 +0900
+date:   2021-09-16 11:00:00 +0900
 categories: blog github jekyll
 ---
 こんにちは、若手エンジニアのしまうまです。
