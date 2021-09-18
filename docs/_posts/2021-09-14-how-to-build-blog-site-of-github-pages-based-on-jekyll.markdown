@@ -2,9 +2,9 @@
 layout: post
 title:  "Github Pages + Jekyll でブログサイトを作る方法"
 date:   2021-09-16 11:00:00 +0900
-categories: blog github jekyll
+permalink: /articles/how-to-build-github-pages-blog-site-with-jekyll
 ---
-こんにちは、若手エンジニアのしまうまです。
+こんにちは、若手エンジニアのYUKIです。
 
 この記事では、<br>
 「__JekyllでGithub Pages上にブログサイトを構築する方法__」を紹介します。
