@@ -9,7 +9,7 @@ permalink: /articles/how-to-build-github-pages-blog-site-with-jekyll
 この記事では、<br>
 「__JekyllでGithub Pages上にブログサイトを構築する方法__」を紹介します。
 
-![](/blog/assets/images/pexels-negative-space-92904.png)
+![](/assets/images/pexels-negative-space-92904.png)
 
 実際にこのブログサイトはその方法で構築しています。ぜひ参考にしてみてください。<br>
 今回使用した環境・技術は以下の通りです。
@@ -182,7 +182,7 @@ cd ~/<user>.github.io/docs
 ※リポジトリの下にディレクトリを作成して、その下にJekyllを構築したい場合は、
 今回作成したGithubリポジトリのSettings → Pages の `source` で公開するソースの場所を調整する必要があります。
 
-![](/blog/assets/screenshots/2021-09-16_101702.png)
+![](/assets/screenshots/2021-09-16_101702.png)
 
 私の環境でも、`<user>.github.io/docs`の下にJekyllを構築しています。
 （リポジトリ直下にJekyllを構築しても特に問題はないと思います）
@@ -253,7 +253,7 @@ https://<user>.github.io
 下記のようなページが表示されればOKです。
 （反映直後は表示されない可能性があるので、その場合は少し時間を置いてから再アクセスします）
 
-![](/blog/assets/screenshots/2021-09-16_103416.png)
+![](/assets/screenshots/2021-09-16_103416.png)
 
 ---
 
