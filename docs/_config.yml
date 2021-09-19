@@ -31,6 +31,7 @@ twitter_username: yuki_merlot
 
 # Build settings
 theme: minima
+google_analytics: G-1K3229NJ6G
 plugins:
   - jekyll-feed
 
