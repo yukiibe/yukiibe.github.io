@@ -30,12 +30,12 @@ twitter_username: yuki_merlot
 #github_username: 
 
 # Build settings
-#theme: minima
-remote_theme: jekyll/minima
+theme: minima
+#remote_theme: jekyll/minima
 google_analytics: G-1K3229NJ6G
 plugins:
-  - jekyll-remote-theme
   - jekyll-feed
+#  - jekyll-remote-theme
 
 # Exclude from processing.
 # The following items will not be processed, by default.
