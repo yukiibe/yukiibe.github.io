@@ -21,7 +21,7 @@
 title: 若手エンジニアのWeb技術ブログ
 #email: 
 description: >- # this means to ignore newlines until "baseurl:"
-  このブログでは、Web技術やプログラミングなど、
+  このブログでは、Web技術やプログラミングの、
   日々エンジニアが直面する問題の解決方法などを紹介します。
   ゆくゆくは新しい技術の紹介なども記事にしたいと思います。
 baseurl: "" # the subpath of your site, e.g. /blog
