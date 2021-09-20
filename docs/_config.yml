@@ -34,6 +34,7 @@ google_analytics: G-1K3229NJ6G
 plugins:
 #  - jekyll-feed
   - jekyll-remote-theme
+  - jekyll-sitemap
 
 author:
   name: yukiibe
