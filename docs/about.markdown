@@ -11,7 +11,7 @@ permalink: /about/
 
 ### __Profile__
 
-<img src="/assets/images/blog-about-desk.png" width="350px" height="220px">
+__筆者：yuki ibe__
 
 京都のIT企業に、新卒未経験でWebエンジニアとして就職。<br>
 自社Webアプリケーション開発に携わる。（アジャイル開発）
