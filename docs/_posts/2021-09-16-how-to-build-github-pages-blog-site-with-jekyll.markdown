@@ -163,34 +163,19 @@ jekyll -v
 
 Githubリポジトリの作成、Jekyllのインストールが完了したら、<br>
 次はローカルリポジトリを作成して、そこにJekyllでサイトを構築し、Github上にアップロードします。
-基本的には、Githubが用意している[__こちらの構築手順__][build-github-pages-site-with-jekyll]に沿って解説します。
+Githubが用意している[__こちらの構築手順__][build-github-pages-site-with-jekyll]とは少し異なるやり方です。
 
 #### __ローカルリポジトリの作成__
 
-※`<user>`の部分は書き換えてください。
+リポジトリを作成したいディレクトリに移動して、Githubで作成したリモートリポジトリを取り込みます。
+`<user>`の部分は書き換えてください。
 ```
-mkdir <user>.github.io
-cd ~/<user>.github.io
-git init
+git clone git@github.com:<user>/<user>.github.io.git
 ```
-
-リポジトリの下にディレクトリを挟みたい場合は
-```
-mkdir <user>.github.io/docs
-cd ~/<user>.github.io/docs
-```
-※リポジトリの下にディレクトリを作成して、その下にJekyllを構築したい場合は、
-今回作成したGithubリポジトリのSettings → Pages の `source` で公開するソースの場所を調整する必要があります。
-
-![](/assets/screenshots/2021-09-16_101702.png)
-
-私の環境でも、`<user>.github.io/docs`の下にJekyllを構築しています。
-（リポジトリ直下にJekyllを構築しても特に問題はないと思います）
-設定方法については[__こちらの説明__][github-pages-built-source]をご参照ください。
 
 #### __Jekyllでサイトを構築__
 
-サイトを作成したいディレクトリに移動して下記を実行
+Jekyllを構築したいディレクトリに移動して下記を実行
 ```
 jekyll new --skip-bundle .
 ```
@@ -198,7 +183,8 @@ jekyll new --skip-bundle .
 
 実行すると、以下のようなファイル群が自動で生成されます
 ```
-ubuntu@Y-IBE:~/yukiibe.github.io/docs$ ls -al
+ls -al
+
 total 36
 drwxr-xr-x 3 ubuntu ubuntu 4096 Sep 13 22:43 .
 drwxr-xr-x 4 ubuntu ubuntu 4096 Sep 13 17:52 ..
@@ -238,11 +224,10 @@ bundle install
 ```
 git add .
 git commit -m 'Initial GitHub pages site with Jekyll'
+git push -u origin <default branch>
 ```
-```
-git remote add origin https://github.com/<user>/<user>.github.io.git
-git push -u origin master
-```
+※`<default branch>`は、Github上でリポジトリを作成した時に指定されたものです。<br>
+master か main が一般的ですが、最近は`main`というブランチ名が標準だそうです。
 
 #### __ブログサイトの動作確認__
 
@@ -254,6 +239,15 @@ https://<user>.github.io
 （反映直後は表示されない可能性があるので、その場合は少し時間を置いてから再アクセスします）
 
 ![](/assets/screenshots/2021-09-16_103416.png)
+
+※リポジトリ直下にディレクトリを作成して、その下にJekyllを構築した場合は、
+今回作成したGithubリポジトリのSettings → Pages の `source` で公開するソースの場所を調整する必要があります。
+
+![](/assets/screenshots/2021-09-16_101702.png)
+
+私の環境では、`<user>.github.io/docs`の下にJekyllを構築しています。
+（リポジトリ直下にJekyllを構築しても特に問題はないと思います）
+公開ソースの調整方法については[__こちらの説明__][github-pages-built-source]をご参照ください。
 
 ---
 
