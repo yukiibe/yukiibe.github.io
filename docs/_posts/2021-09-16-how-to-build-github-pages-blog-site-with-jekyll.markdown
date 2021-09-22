@@ -224,10 +224,9 @@ bundle install
 ```
 git add .
 git commit -m 'Initial GitHub pages site with Jekyll'
-git push -u origin <default branch>
+git push
 ```
-※`<default branch>`は、Github上でリポジトリを作成した時に指定されたものです。<br>
-master か main が一般的ですが、最近は`main`というブランチ名が標準だそうです。
+※この時はデフォルトブランチ（`master`あるいは`main`）で作業しています。
 
 #### __ブログサイトの動作確認__
 
