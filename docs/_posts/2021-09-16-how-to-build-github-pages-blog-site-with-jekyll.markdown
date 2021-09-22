@@ -168,18 +168,21 @@ Githubが用意している[__こちらの構築手順__][build-github-pages-sit
 #### __ローカルリポジトリの作成__
 
 リポジトリを作成したいディレクトリに移動して、Githubで作成したリモートリポジトリを取り込みます。
-`<user>`の部分は書き換えてください。
+※`<user>`の部分は書き換えてください。
 ```
 git clone git@github.com:<user>/<user>.github.io.git
 ```
 
 #### __Jekyllでサイトを構築__
 
-Jekyllを構築したいディレクトリに移動して下記を実行
+Jekyllを構築したいディレクトリに移動してJekyllを作成
+
+※私の環境では、リポジトリ`<user>.github.io`直下に`docs`ディレクトリを作成してその下に<br>　Jekyllを構築しました。<br>
+※`<user>`の部分は書き換えてください。
 ```
+cd ~/<user>.github.io
 jekyll new --skip-bundle .
 ```
-※bundleは後でインストールします
 
 実行すると、以下のようなファイル群が自動で生成されます
 ```
@@ -230,7 +233,8 @@ git push
 
 #### __ブログサイトの動作確認__
 
-ブログサイトTopのURLは下記になります。確認してみましょう。
+ブログサイトTopのURLは下記になります。確認してみましょう。<br>
+※`<user>`の部分は書き換えてください。
 ```
 https://<user>.github.io
 ```
@@ -244,9 +248,9 @@ https://<user>.github.io
 
 ![](/assets/screenshots/2021-09-16_101702.png)
 
-私の環境では、`<user>.github.io/docs`の下にJekyllを構築しています。
-（リポジトリ直下にJekyllを構築しても特に問題はないと思います）
 公開ソースの調整方法については[__こちらの説明__][github-pages-built-source]をご参照ください。
+
+今回の構築方法の紹介は以上になります。
 
 ---
 
