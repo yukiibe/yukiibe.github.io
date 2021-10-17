@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Google Analytics 4 がJekyllサイトでエラーになる原因と解決方法"
-date:   2021-10-01 11:00:00 +0900
+date:   2021-10-02 11:00:00 +0900
 permalink: /articles/google-analytics-4-error-on-jekyll-and-solution
 ---
 こんにちは、若手エンジニアのYUKIです。
