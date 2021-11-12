@@ -11,7 +11,7 @@ permalink: /about/
 
 ### __Profile__
 
-__筆者：yuki ibe__
+__筆者：yuki__
 
 京都のIT企業に、新卒未経験でWebエンジニアとして就職。<br>
 自社Webアプリケーション開発に携わる。（アジャイル開発）
