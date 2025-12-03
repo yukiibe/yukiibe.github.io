@@ -1,4 +1,0 @@
-User-agent: *
-Disallow:
-
-Sitemap: https://yukiibe.github.io/sitemap.xml
