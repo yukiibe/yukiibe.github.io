@@ -8,8 +8,8 @@
 <h2>検証用ページ</h2>
 <body>
 
-        <form action="https://business.form-mailer.jp/fm/service/Forms/confirm" method="post" name="form1" ENCTYPE="multipart/form-data" accept-charset="UTF-8">
-      <input type="hidden" name="key" value="309ace24321998">
+    <form action="https://dev-business.form-mailer.jp/fm/service/Forms/confirm" method="post" name="form1" ENCTYPE="multipart/form-data" accept-charset="UTF-8">
+      <input type="hidden" name="key" value="3d11df581437">
 
       *は必須項目です
 
@@ -19,8 +19,8 @@
         名前
       </p>
       <p>
-        姓 <input name="field_5474071_sei" type="text" placeholder="姓">
-        名 <input name="field_5474071_mei" type="text" placeholder="名">
+        姓 <input name="field_8924_sei" type="text" placeholder="姓">
+        名 <input name="field_8924_mei" type="text" placeholder="名">
       </p>
 
       <!-- email -->
@@ -28,7 +28,7 @@
         メールアドレス
       </p>
       <p>
-        <input name="field_5474072" type="text" size="30" placeholder="info@example.com">
+        <input name="field_8925" type="text" size="30" placeholder="info@example.com">
       </p>
 
       <!-- radio -->
@@ -36,8 +36,8 @@
         性別
       </p>
       <p>
-        <input name="field_5474073" type="radio" value="0" >男性
-        <input name="field_5474073" type="radio" value="1" >女性
+        <input name="field_8926" type="radio" value="0" >男性
+        <input name="field_8926" type="radio" value="1" >女性
       </p>
 
       <!-- birth date -->
@@ -45,8 +45,8 @@
         生年月日
       </p>
       <p>
-        <input name="field_5474074_y" type="text" maxlength="4">年
-        <select name="field_5474074_m">
+        <input name="field_8927_y" type="text" maxlength="4">年
+        <select name="field_8927_m">
           <option value="">--</option>
           <option value="01">1</option>
           <option value="02">2</option>
@@ -61,7 +61,7 @@
           <option value="11">11</option>
           <option value="12">12</option>
         </select>月
-        <select name="field_5474074_d">
+        <select name="field_8927_d">
           <option value="">--</option>
           <option value="01">1</option>
           <option value="02">2</option>
@@ -97,14 +97,80 @@
         </select>日
       </p>
 
+      <!-- phone -->
+      <p>
+        電話番号
+      </p>
+      <p>
+        <input name="field_8928" type="text" placeholder="090-0000-0000">
+      </p>
+
+      <!-- dropdown -->
+      <p>
+        都道府県
+      </p>
+      <p>
+        <select name="field_8929">
+          <option value="">------</option>
+          <option value="0" >北海道</option>
+          <option value="1" >青森県</option>
+          <option value="2" >岩手県</option>
+          <option value="3" >宮城県</option>
+          <option value="4" >秋田県</option>
+          <option value="5" >山形県</option>
+          <option value="6" >福島県</option>
+          <option value="7" >茨城県</option>
+          <option value="8" >栃木県</option>
+          <option value="9" >群馬県</option>
+          <option value="10" >埼玉県</option>
+          <option value="11" >千葉県</option>
+          <option value="12" >東京都</option>
+          <option value="13" >神奈川県</option>
+          <option value="14" >新潟県</option>
+          <option value="15" >富山県</option>
+          <option value="16" >石川県</option>
+          <option value="17" >福井県</option>
+          <option value="18" >山梨県</option>
+          <option value="19" >長野県</option>
+          <option value="20" >岐阜県</option>
+          <option value="21" >静岡県</option>
+          <option value="22" >愛知県</option>
+          <option value="23" >三重県</option>
+          <option value="24" >滋賀県</option>
+          <option value="25" >京都府</option>
+          <option value="26" >大阪府</option>
+          <option value="27" >兵庫県</option>
+          <option value="28" >奈良県</option>
+          <option value="29" >和歌山県</option>
+          <option value="30" >鳥取県</option>
+          <option value="31" >島根県</option>
+          <option value="32" >岡山県</option>
+          <option value="33" >広島県</option>
+          <option value="34" >山口県</option>
+          <option value="35" >徳島県</option>
+          <option value="36" >香川県</option>
+          <option value="37" >愛媛県</option>
+          <option value="38" >高知県</option>
+          <option value="39" >福岡県</option>
+          <option value="40" >佐賀県</option>
+          <option value="41" >長崎県</option>
+          <option value="42" >熊本県</option>
+          <option value="43" >大分県</option>
+          <option value="44" >宮崎県</option>
+          <option value="45" >鹿児島県</option>
+          <option value="46" >沖縄県</option>
+          <option value="47" >その他</option>
+        </select>
+      </p>
+
       <!-- address -->
       <p>
         住所
       </p>
       <p>
-        〒<input name="field_5474075_zip" type="text" maxlength="7"><br>
+        〒<input name="field_8930_zip" type="text" maxlength="7"><br>
         都道府県<br>
-        <select name="field_5474075_pref">
+        <select name="field_8930_pref">
           <option value="">----</option>
           <option value="北海道">北海道</option>
           <option value="青森県">青森県</option>
@@ -156,20 +222,214 @@
           <option value="その他">その他</option>
         </select><br>
         市区町村<br>
-        <input name="field_5474075_city" type="text"><br>
+        <input name="field_8930_city" type="text"><br>
         番地<br>
-        <input name="field_5474075_block" type="text"><br>
+        <input name="field_8930_block" type="text"><br>
         マンション・ビル名<br>
-        <input name="field_5474075_building" type="text">
+        <input name="field_8930_building" type="text">
       </p>
 
-      <!-- phone -->
+      <!-- calendar date -->
       <p>
-        電話番号
+        日付
       </p>
       <p>
-        <input name="field_5474076" type="text" placeholder="090-0000-0000">
+      <input name="field_8931" type="date" value=""    pattern="\d{4}-\d{2}-\d{2}">
       </p>
+
+      <!-- time -->
+      <p>
+        時間
+      </p>
+      <p>
+        <select name="field_8932">
+          <option value="">------</option>
+          <option value="00:00">00:00</option>
+          <option value="00:30">00:30</option>
+          <option value="01:00">01:00</option>
+          <option value="01:30">01:30</option>
+          <option value="02:00">02:00</option>
+          <option value="02:30">02:30</option>
+          <option value="03:00">03:00</option>
+          <option value="03:30">03:30</option>
+          <option value="04:00">04:00</option>
+          <option value="04:30">04:30</option>
+          <option value="05:00">05:00</option>
+          <option value="05:30">05:30</option>
+          <option value="06:00">06:00</option>
+          <option value="06:30">06:30</option>
+          <option value="07:00">07:00</option>
+          <option value="07:30">07:30</option>
+          <option value="08:00">08:00</option>
+          <option value="08:30">08:30</option>
+          <option value="09:00">09:00</option>
+          <option value="09:30">09:30</option>
+          <option value="10:00">10:00</option>
+          <option value="10:30">10:30</option>
+          <option value="11:00">11:00</option>
+          <option value="11:30">11:30</option>
+          <option value="12:00">12:00</option>
+          <option value="12:30">12:30</option>
+          <option value="13:00">13:00</option>
+          <option value="13:30">13:30</option>
+          <option value="14:00">14:00</option>
+          <option value="14:30">14:30</option>
+          <option value="15:00">15:00</option>
+          <option value="15:30">15:30</option>
+          <option value="16:00">16:00</option>
+          <option value="16:30">16:30</option>
+          <option value="17:00">17:00</option>
+          <option value="17:30">17:30</option>
+          <option value="18:00">18:00</option>
+          <option value="18:30">18:30</option>
+          <option value="19:00">19:00</option>
+          <option value="19:30">19:30</option>
+          <option value="20:00">20:00</option>
+          <option value="20:30">20:30</option>
+          <option value="21:00">21:00</option>
+          <option value="21:30">21:30</option>
+          <option value="22:00">22:00</option>
+          <option value="22:30">22:30</option>
+          <option value="23:00">23:00</option>
+          <option value="23:30">23:30</option>
+        </select>
+      </p>
+
+      <!-- url -->
+      <p>
+        URL
+      </p>
+      <p>
+        <input name="field_8933" type="url" value="" placeholder="https://example.com" maxlength="5000" >
+      </p>
+
+      <!-- dropdown -->
+      <p>
+        職業yeah
+      </p>
+      <p>
+        <select name="field_8934">
+          <option value="">------</option>
+          <option value="0" >中学生</option>
+          <option value="1" >高校生</option>
+          <option value="2" >専門学校生</option>
+          <option value="3" >短大生</option>
+          <option value="4" >大学生</option>
+          <option value="5" >大学院生</option>
+          <option value="6" >その他学生</option>
+          <option value="7" >専業主婦</option>
+          <option value="8" >家事手伝い</option>
+          <option value="9" >会社員</option>
+          <option value="10" >公務員</option>
+          <option value="11" >自営業</option>
+          <option value="12" >フリーター・アルバイト</option>
+          <option value="13" >アーティスト・クリエイター</option>
+          <option value="14" >その他</option>
+        </select>
+      </p>
+
+      <!-- matrix -->
+      <p>
+        マトリックスリスト
+      </p>
+      <p>
+        <table border="0" cellpadding="5" cellspacing="0">
+          <tr>
+            <td width="20%"></td>
+            <th width="16%" align="center">選択肢1</th>
+            <th width="16%" align="center">選択肢2</th>
+            <th width="16%" align="center">選択肢3</th>
+            <th width="16%" align="center">選択肢4</th>
+            <th width="16%" align="center">選択肢5</th>
+          </tr>
+          <tr>
+            <th>設問1</th>
+            <td align="center">
+              <input type="radio" name="field_8935_0" value="0">
+            </td>
+            <td align="center">
+              <input type="radio" name="field_8935_0" value="1">
+            </td>
+            <td align="center">
+              <input type="radio" name="field_8935_0" value="2">
+            </td>
+            <td align="center">
+              <input type="radio" name="field_8935_0" value="3">
+            </td>
+            <td align="center">
+              <input type="radio" name="field_8935_0" value="4">
+            </td>
+          </tr>
+        </table>
+      </p>
+
+      <!-- file -->
+      <p>
+        ファイルアップロード
+      </p>
+      <p>
+        <input name="field_8936" type="file" size="30" >
+      </p>
+
+      <!-- text -->
+      <p>
+        一行テキスト
+      </p>
+      <p>
+        <input name="field_8938" type="text" value="" size="30"   >
+      </p>
+
+      <!-- textarea -->
+      <p>
+        複数行テキスト
+      </p>
+      <p>
+        <textarea name="field_8939" cols="30" rows="5"   ></textarea>
+      </p>
+
+      <!-- radio -->
+      <p>
+        単一選択
+      </p>
+      <p>
+        <input name="field_8940" type="radio" value="0" >選択肢1
+        <input name="field_8940" type="radio" value="1" >選択肢2
+        <input name="field_8940" type="radio" value="2" >選択肢3
+      </p>
+
+      <!-- checkbox -->
+      <p>
+        複数選択
+      </p>
+      <p>
+        <input name="field_8941" type="checkbox" value="0" >選択肢1
+        <input name="field_8941" type="checkbox" value="1" >選択肢2
+        <input name="field_8941" type="checkbox" value="2" >選択肢3
+      </p>
+
+      <!-- dropdown -->
+      <p>
+        リスト・メニュー
+      </p>
+      <p>
+        <select name="field_8942">
+          <option value="">------</option>
+          <option value="0" >選択肢1</option>
+          <option value="1" >選択肢2</option>
+          <option value="2" >選択肢3</option>
+        </select>
+      </p>
+
+      <!-- hidden -->
+      <input name="field_8943" type="hidden" value=""  >
+
+      <!-- label -->
+      <p>
+        テキストが入ります
+      </p>
+
+      <!-- border -->
+      <hr>
 
 
 
